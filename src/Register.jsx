@@ -16,7 +16,7 @@ import { API_ENDPOINT } from './Api';
 
 function Register() {
   const navigate = useNavigate();
-  const [fullName, setFullName] = useState('');
+  const [fullname, setFullName] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -39,7 +39,7 @@ function Register() {
       const response = await axios.post(`${API_ENDPOINT}/api/auth/register`, { 
         fullName,  // Make sure the field name is `fullName`
         username, 
-        password, 
+        password: password,
       });
   
       // Assuming registration is successful, no token in registration response
