@@ -37,7 +37,7 @@ function Register() {
     try {
       // Make the API call for registration
       const response = await axios.post(`${API_ENDPOINT}/api/auth/register`, { 
-        fullName,  // Make sure the field name is `fullName`
+        fullname,  // Make sure the field name is `fullName`
         username, 
         password: password,
       });
