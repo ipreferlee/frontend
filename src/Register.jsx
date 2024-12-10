@@ -110,7 +110,7 @@ function Register() {
                         className="form-control-sm rounded-0"
                         type="text"
                         placeholder="Enter Full Name"
-                        value={fullName}
+                        value={fullname}
                         onChange={(e) => setFullName(e.target.value)}
                         required
                       />
