@@ -16,7 +16,7 @@ import { API_ENDPOINT } from './Api';
 
 function Register() {
   const navigate = useNavigate();
-  const [fullName, setFullName] = useState('');
+  const [fullname, setFullName] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -36,8 +36,8 @@ function Register() {
   
     try {
       // Make the API call for registration
-      const response = await axios.post(`${API_ENDPOINT}/api/auth/register`, { 
-        fullName,  // Make sure the field name is `fullName`
+      const response = await axios.post(`${API_ENDPOINT}/auth/register`, { 
+        fullname,  // Make sure the field name is `fullName`
         username, 
         password, 
       });
@@ -110,7 +110,7 @@ function Register() {
                         className="form-control-sm rounded-0"
                         type="text"
                         placeholder="Enter Full Name"
-                        value={fullName}
+                        value={fullname}
                         onChange={(e) => setFullName(e.target.value)}
                         required
                       />
