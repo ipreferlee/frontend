@@ -37,43 +37,35 @@ function Register() {
     try {
       // Make the API call for registration
       const response = await axios.post(`${API_ENDPOINT}/auth/register`, { 
-        fullname,  // Make sure the field name is `fullName`
+        fullname, 
         username, 
         password, 
       });
   
-      // Assuming registration is successful, no token in registration response
       if (response.status === 201) {
-        setError('');  // Clear any previous errors
+        setError('');  
         setLoading(false);
-        navigate("/login");  // Redirect to login page after successful registration
+        navigate("/login");  
       }
     } catch (error) {
       setLoading(false);
   
-      // Log the full error object for inspection
       console.error(error);
   
-      // Check if error.response exists and structure is valid
       if (error.response) {
-        // Try to extract a meaningful message
         const errorMessage = error.response.data?.message || 'An error occurred during registration';
         setError(errorMessage);
       } else if (error.request) {
-        // No response received from the server
         setError('No response from server. Please try again later.');
       } else {
-        // Something else went wrong
         setError(error.message || 'An unknown error occurred.');
       }
     }
   };
-  
-  
-    
+
   return (
     <>
-      <Navbar bg="Primary" data-bs-theme="dark">
+      <Navbar bg="primary" data-bs-theme="dark">
         <Container>
           <Navbar.Brand href="#home">Play Zone</Navbar.Brand>
         </Container>
@@ -82,11 +74,9 @@ function Register() {
       <Container>
         <Row className="justify-content-md-center vh-100 align-items-center">
           <Col md={6} lg={5}>
-            <div className="text-center mb-4">
-            </div>
-            <div className="card shadow" style={{ borderRadius: '10px', padding: '20px' }}>
+            <div className="card shadow-sm" style={{ borderRadius: '10px', padding: '30px' }}>
               <div className="card-body">
-                <h5 className="text-center mb-4 fs-3 fw-bold" style={{ fontWeight: '600' }}>
+                <h5 className="text-center mb-4 fs-4 fw-bold" style={{ fontWeight: '600' }}>
                   Register
                 </h5>
                 <Form onSubmit={handleSubmit}>
@@ -141,7 +131,7 @@ function Register() {
                     </div>
                   </Form.Group>
 
-                  <Form.Group controlId="formConfirmPassword" className="mb-3">
+                  <Form.Group controlId="formConfirmPassword" className="mb-4">
                     <Form.Label style={{ fontWeight: 'bold' }}>Confirm Password:</Form.Label>
                     <div className="input-group">
                       <span className="input-group-text">
@@ -158,11 +148,11 @@ function Register() {
                     </div>
                   </Form.Group>
 
-                  {error && <p className="text-danger">{error}</p>}
+                  {error && <p className="text-danger mb-3">{error}</p>}
 
                   <Button
                     variant="success"
-                    className="btn btn-block bg-custom btn-flat rounded-0"
+                    className="w-100 btn btn-flat rounded-0"
                     size="sm"
                     type="submit"
                     disabled={loading}
@@ -189,3 +179,4 @@ function Register() {
 }
 
 export default Register;
+
