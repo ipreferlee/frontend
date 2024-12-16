@@ -151,7 +151,7 @@ function Register() {
                   {error && <p className="text-danger mb-3">{error}</p>}
 
                   <Button
-                    variant="success"
+                    variant="primary"
                     className="w-100 btn btn-flat rounded-0"
                     size="sm"
                     type="submit"
