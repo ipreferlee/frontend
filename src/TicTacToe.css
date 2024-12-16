@@ -75,6 +75,37 @@
     background-color: #6c757d;  /* Disabled color */
     cursor: not-allowed;
   }
+  .square {
+    width: 60px;
+    height: 60px;
+    font-size: 2em;
+    text-align: center;
+    border: 1px solid black;
+    cursor: pointer;
+  }
+  
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 60px);
+    grid-gap: 5px;
+  }
+  
+  .game-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .winner-message, .turn-message {
+    font-size: 1.5em;
+    margin-top: 20px;
+  }
+  
+  button {
+    margin: 10px;
+    padding: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+  }
   
   
   
