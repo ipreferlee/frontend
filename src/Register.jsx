@@ -73,9 +73,9 @@ function Register() {
     
   return (
     <>
-      <Navbar bg="success" data-bs-theme="dark">
+      <Navbar bg="Primary" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand href="#home">Naga College Foundation, Inc.</Navbar.Brand>
+          <Navbar.Brand href="#home">Play Zone</Navbar.Brand>
         </Container>
       </Navbar>
 
@@ -83,16 +83,6 @@ function Register() {
         <Row className="justify-content-md-center vh-100 align-items-center">
           <Col md={6} lg={5}>
             <div className="text-center mb-4">
-              <img
-                src="/NCF.jpg"
-                alt="NCF Logo"
-                style={{
-                  width: '200px',
-                  height: '200px',
-                  borderRadius: '50%',
-                  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
-                }}
-              />
             </div>
             <div className="card shadow" style={{ borderRadius: '10px', padding: '20px' }}>
               <div className="card-body">
